@@ -1,0 +1,34 @@
+<div class='wrapper'>
+  <h1>Ninja Gold</h1>
+  <p class='yourMoney'>Your gold: {{gold}}</p>
+  <p class='message' *ngIf="showMessage">{{message}}</p>
+  <button class='save' (click)='save($event)'>Save</button>
+  <div class='top'>
+    <div class='activity'>
+      <p class='activityName'>Farm</p>
+      <p class='subtitle'>Earns 2-5 Gold</p>
+      <button (click)="performTask('farming')">Farm!</button>
+    </div>
+    <div class='activity'>
+      <p class='activityName'>Spelunk</p>
+      <p class='subtitle'>Earns 5-10 Gold</p>
+      <button (click)="performTask('spelunking')">Spelunk!</button>
+    </div>
+    <div class='activity'>
+      <p class='activityName'>Robbery</p>
+      <p class='subtitle'>Earns 7-15</p>
+      <button (click)="performTask('stealing')">Steal!</button>
+    </div>
+    <div class='activity'>
+      <p class='activityName'>Gamble</p>
+      <p class='subtitle'>Earn/Lose 0-100 Gold</p>
+      <button (click)="performTask('gambling')">Gamble!</button>
+    </div>
+  </div>
+  <div class='activityLog'>
+    <p *ngFor='let activity of activityLog'>{{activity}}</p>
+  </div>
+  <div class='leaderboard'>
+    <h1>Leaderboard</h1>
+  </div>
+</div>
